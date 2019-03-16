@@ -13,10 +13,6 @@ dictionary MediaTrackSettings {
     double    frameRate;
     DOMString facingMode;
     DOMString deviceId;
-    boolean echoCancellation;
-    boolean noiseSuppression;
-    boolean autoGainControl;
-    long      channelCount;
 
     // Mozilla-specific extensions:
 
