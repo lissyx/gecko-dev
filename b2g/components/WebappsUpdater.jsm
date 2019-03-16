@@ -91,6 +91,7 @@ this.WebappsUpdater = {
     this._checkingApps = true;
     this._wakeLock = powerManagerService.newWakeLock("cpu");
 
+/*
     let self = this;
 
     let window = Services.wm.getMostRecentWindow("navigator:browser");
@@ -143,5 +144,6 @@ this.WebappsUpdater = {
       // Could not get the app list, just notify to update nothing.
       self._appsUpdated([]);
     }
+*/
   }
 };
