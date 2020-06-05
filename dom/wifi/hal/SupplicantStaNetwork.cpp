@@ -115,11 +115,13 @@ Result_t SupplicantStaNetwork::SetConfiguration(
   }
 
   // wep key
-  std::array<std::string, max_wep_key_num> wepKeys = {
-      config.mWepKey0, config.mWepKey1, config.mWepKey2, config.mWepKey3};
-  stateCode = SetWepKey(wepKeys, aConfig.mWepTxKeyIndex);
-  if (stateCode != SupplicantStatusCode::SUCCESS) {
-    return ConvertStatusToResult(stateCode);
+  if (!config.mWepKey0.empty()) {
+    std::array<std::string, max_wep_key_num> wepKeys = {
+        config.mWepKey0, config.mWepKey1, config.mWepKey2, config.mWepKey3};
+    stateCode = SetWepKey(wepKeys, aConfig.mWepTxKeyIndex);
+    if (stateCode != SupplicantStatusCode::SUCCESS) {
+      return ConvertStatusToResult(stateCode);
+    }
   }
 
   // proto
