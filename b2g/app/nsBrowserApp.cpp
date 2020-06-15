@@ -46,6 +46,7 @@
 #endif
 
 #ifdef MOZ_WIDGET_GONK
+#  include "mozilla/BootAnimation.h"
 #  include "ui/GraphicBuffer.h"
 using namespace android;
 #endif
@@ -186,6 +187,10 @@ static int do_main(int argc, char* argv[], char* envp[]) {
 
     return gBootstrap->XRE_XPCShellMain(--argc, argv, envp, &shellData);
   }
+
+#ifdef MOZ_WIDGET_GONK
+  mozilla::StartBootAnimation();
+#endif
 
   BootstrapConfig config;
 

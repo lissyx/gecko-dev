@@ -36,8 +36,8 @@
 #include "base/basictypes.h"
 #include "GonkPermission.h"
 #include "ScreenHelperGonk.h"
-#include "libdisplay/BootAnimation.h"
 #include "nscore.h"
+#include "libdisplay/BootAnimation.h"
 #include "mozilla/TouchEvents.h"
 #include "mozilla/FileUtils.h"
 #include "mozilla/Hal.h"
@@ -1091,7 +1091,6 @@ nsresult nsAppShell::Init() {
     ProcessState::self()->startThreadPool();
 
     /* Start boot animation */
-    mozilla::StartBootAnimation();
     property_set("sys.boot_completed", "1");
 
     ScreenManager& screenManager = ScreenManager::GetSingleton();
