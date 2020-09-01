@@ -258,9 +258,9 @@ document.addEventListener(
       window.setTimeout(() => {
         SettingsPrefsSync.delayedInit();
       }, 10000);
-
-      shell.start();
     });
+
+    shell.start();
   },
   { once: true }
 );
